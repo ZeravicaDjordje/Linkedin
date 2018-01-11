@@ -9,6 +9,8 @@ API provides next features:
 - Virtual display is provided if you don't want to see browser running on your desktop
 - Endorse all skills to your connections(The number of endorsed connections depends on you). Some of them will endorse you too, number depends on how much connections you endorsed.
 - Visit peoples profile(They will see that their profile is visited, some of them will see your(Majority will check))
+- You can make simple sql_lite database to keep track what connections you add or remove from database file.
+- There is also skrol file that allows you to sroll to bottom, top or any other position on page.
 For now this is it. I will certanly add more features in future.
 Files that make up API are.
 1. linkedin.py
