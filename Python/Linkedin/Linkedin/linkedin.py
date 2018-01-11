@@ -23,11 +23,15 @@ class Login(object):
         display.start()
         return display
     
-    def start_browser(self, url):
+    def start_browser(self, url, goo_fire='firefox'):
         ''' Starting web-driver browser, you have to 
         accepting two atributes object and url(url-login page)'''
-        browser = webdriver.Firefox()
-        browser.get(url)
+        if goo_fire.lower() == 'firefox':
+            browser = webdriver.Firefox()
+            browser.get(url)
+        else:
+            browser = webdriver.Chrome()
+            browser.get(url)
         return browser
 
     def login(self, e_mail, passw, browser):
