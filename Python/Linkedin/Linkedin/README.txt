@@ -10,7 +10,7 @@ API provides next features:
 - Endorse all skills to your connections(The number of endorsed connections depends on you). Some of them will endorse you too, number depends on how much connections you endorsed.
 - Visit peoples profile(They will see that their profile is visited, some of them will see your(Majority will check))
 For now this is it. I will certanly add more features in future.
-Files that are make up API are.
+Files that make up API are.
 1. linkedin.py
 2. tor_ip.py(optional)
 3. skrol.py
