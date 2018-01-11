@@ -139,15 +139,7 @@ class Endorsment(Messages):
         if type(job_d) != type([]):
             print('You have to forward list type, not %r type' % type(job_d))
         job_descript = browser.find_elements_by_class_name('mn-person-info__link.ember-view')
-        '''
-        sql_info = ('connections','connection','name_surname','company','position')
-        connect_cursor = sql.connect_cursor('job.db')
-        connect = connect_cursor[0]
-        cursor = connect_cursor[1]
-        sql.create_table(cursor, sql_info)
-        sql_data = sql.fetch_data(cursor, sql_info[0])
-        '''
-        for descrpt in job_descript:
+       for descrpt in job_descript:
             # end = 0
             link = descrpt.get_attribute('href')
             job_company = descrpt.text.split('\n')[3].split(' at ')
@@ -160,17 +152,10 @@ class Endorsment(Messages):
                 job = ''
                 company = ''
                 print('Except')
-            #if people < number_of_people:
-            #    break
-            #           for jobs in job_d:
-            #               if jobs.lower() in job.lower():
-            for data in sql_data:
+         for data in sql_data:
                 if name_surname == data[1] and company == data[2] and job == data[3]:
                     print('In database skipping',(name_surname, company, job))
-                    #end = 1
                     break
-                # if end == 1:
-                #   break
                 print('Link click')
                 sql.insert_data(cursor, (name_surname, company, job), sql_info)
                 descrpt.send_keys(Keys.CONTROL + Keys.RETURN)
@@ -182,21 +167,7 @@ class Endorsment(Messages):
                 number_of_people += 1
                 browser.close()
                 browser.switch_to.window(browser.window_handles[0])
-                # Here code to endorse
                 time.sleep(2)
                 break
         sql.save_data(connect)
-        
-if __name__ == '__main__':
-    linkedin_bot = Login()
-    moja_mreza = MyNetwork()
-    poruke = Messages()
-    display = linkedin_bot.start_display()
-    browser = linkedin_bot.start_browser('https://www.linkedin.com')
-    linkedin_bot.login('zeravicadjordje1@gmail.com','Domingomogli1995',browser)
-    moja_mreza.connection_my(browser, 200)
- #  poruke.all_connections(browser)
- #  time.sleep(5)
- #  poruke.message(browser)
-    moja_mreza.connect_people(browser) 
-    linkedin_bot.stop_display(display)
+ 
