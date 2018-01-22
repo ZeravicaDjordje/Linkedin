@@ -23,7 +23,7 @@ def local_ip():
 
 def create_server(server):
     change_dir()
-    server = server.BaseHTTPServer.HTTPServer((local_ip(), 8000),server.SimpleHTTPRequestHandler)
+    server = server.BaseHTTPServer.HTTPServer((local_ip(), 80),server.SimpleHTTPRequestHandler)
     print server.server_address
     server.serve_forever()
 
