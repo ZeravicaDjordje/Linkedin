@@ -7,7 +7,7 @@ try:
     from skrol import scrolls_bottom, scrolls_top, scrolls
     import sql_linkedin as sql
 except Exception as e:
-    print('You don"t have install librery', e)
+    print('Install librery', e)
     module = str(e)[17:]
     module = module[0:len(module)-1]
     pip_return = pip.main(['install', module])
